@@ -28,8 +28,8 @@ def main():
 
     user_name = requests.get(user_url).json()['name']
 
-    output = "Employee {} is done with tasks({}/{}):" \
-        .format(user_name, len(completed_tasks),number_of_task)
+    output = "Employee {} is done with tasks({}/{}):"\
+        .format(user_name, len(completed_tasks), number_of_task)
 
     print(output)
 
