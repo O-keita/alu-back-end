@@ -17,7 +17,7 @@ def main():
 
     number_of_task = 0
 
-    completed_tasks =[]
+    completed_tasks = []
 
     for todo in todo_res.json():
         if todo['userId'] == user_id:
@@ -28,8 +28,8 @@ def main():
 
     user_name = requests.get(user_url).json()['name']
 
-    output = "Employee {} is done with tasks({}/{}):".format(user_name, len(completed_tasks),
-                                                              number_of_task)
+    output = "Employee {} is done with tasks({}/{}):"\
+        .format(user_name, len(completed_tasks),number_of_task)
 
     print(output)
 
@@ -39,4 +39,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
