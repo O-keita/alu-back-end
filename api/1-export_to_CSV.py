@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Export results from the API as CSV"""
 
+import csv
 import requests
 import sys
-import csv
 
 def main():
     """Main function"""
@@ -49,3 +49,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
