@@ -17,13 +17,13 @@ def main():
     user_file = {user_id: user_info}
 
     response = requests.get(todo_url).json()
-    user_name = requests.get(user_url).json()['username']
+    user_name = requests.get(user_url).json().get('username')
 
     for todo in response:
-        if todo['userId'] == user_id:
+        if todo.get('userId') == user_id:
             user_info.append({
-                "task": todo['title'],
-                "completed": todo['completed'],
+                "task": todo.get('title'),
+                "completed": todo.get('completed'),
                 "name": user_name
             })
 
