@@ -16,10 +16,10 @@ def main():
     user_info = []
     user_file = {user_id: user_info}
 
-    response = requests.get(todo_url).json()
+    response = requests.get(todo_url)
     user_name = requests.get(user_url).json().get('username')
 
-    for todo in response:
+    for todo in response.json():
         if todo.get('userId') == user_id:
             user_info.append({
                 "task": todo.get('title'),
