@@ -5,6 +5,7 @@ import csv
 import requests
 import sys
 
+
 def main():
     """Main function"""
     user_id = int(sys.argv[1])
@@ -49,4 +50,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
