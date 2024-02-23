@@ -4,6 +4,7 @@
 import json
 import requests
 
+
 def main():
     """Main function"""
 
@@ -21,7 +22,8 @@ def main():
 
         if user_id not in output.keys():
             # Fetch the username for the specific user
-            username = next((user['username'] for user in user_data if user['id'] == user_id), None)
+            username = next((user['username'] for user in user_data
+                            if user['id'] == user_id), None)
             output[user_id] = []
 
         output[user_id].append({
@@ -33,6 +35,7 @@ def main():
     # Write to JSON file outside the loop
     with open("todo_all_employees.json", 'w', newline="") as json_file:
         json.dump(output, json_file, indent=2)
+
 
 if __name__ == "__main__":
     main()
